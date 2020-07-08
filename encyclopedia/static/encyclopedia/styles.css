@@ -1,0 +1,199 @@
+*
+{
+    font-family: Lato;
+    font-style: normal;
+    vertical-align: middle;
+}
+ 
+html
+{
+    overflow-x: hidden;
+}
+
+body
+{
+    margin: 0;
+    background-color: white;    
+}
+
+.row
+{
+    margin-top: 60px;
+}
+
+.main 
+{
+    padding: 30px 30px 0px 30px;
+}
+
+
+#listing > li
+{
+    list-style: circle;
+    font-size: 1.3em;
+}
+
+#search 
+{
+    outline: none;
+    margin:15px;
+    float: right;
+    color: black;
+    font-size: 1.2em;
+}
+
+/* Wikipedia icon */
+#icon
+{
+  text-decoration: none;
+  color:black;
+  outline: none;
+  text-align: center;
+  display:block;
+  font-size: 10em;
+  float: left;
+}
+
+.input-group-text a
+{
+    text-decoration: none;
+    color: black;
+}
+
+/* Top navbar (Smaller screens) */
+nav
+{
+    display: block;
+    height: 60px;;
+    width: 100%;
+    position:fixed;
+    top:0;
+    z-index: 14;
+    background-color: #eaecf0;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.5);
+}
+
+/* Hamburger menu */
+#menu
+{
+    float: left;
+    outline: none;
+    margin:5px;
+    font-size: 1.8em;
+    color: #54595d;
+}
+
+
+nav h2
+{
+    margin-top: 15px;
+    text-align: center;
+    font-family: Lato;
+    color: #4f5051;
+}
+
+.form-control
+{
+    width: 70%;
+}
+
+#edit
+{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+#sub,#sub1
+{
+    float:right;
+    margin:30px;
+}
+
+blockquote
+{
+    border-left: 5px solid gray;
+	padding:10px;
+}
+
+code {
+    white-space: pre;
+}
+
+input:required
+{
+    box-shadow: none;
+}
+
+.alert
+{
+    margin:0 auto;
+    text-align: center;
+    width: 50%;
+}   
+
+/* Animation for Side navbar (Responsive) */
+
+@keyframes slide
+{
+    0%
+    {
+        width: 0;
+    }
+    25%
+    {
+        display: block;
+        width:40vw;
+    }
+    50%
+    {
+        width:60vw;
+    }
+    75%
+    {
+        width:80vw;
+    }
+    100%
+    {
+        width:80vw;
+    }
+}
+
+/* Applies only on smaller screens */
+.col-lg-12
+{
+    position: fixed;
+    z-index: 12;
+    animation-name:slide ;
+    animation-duration: 0.09s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.sidebar
+{
+    display: none;
+    background-color: #f0f0f0;
+    padding: 0px 20px 0px 20px;
+}
+
+/* Modifications for Desktop version */
+@media (min-width:1066px)
+{
+    
+    nav
+    {
+        display: none;
+    }
+    .row
+    {
+        padding: 0px;
+        margin-top: 0px;
+    }
+    .sidebar{
+        display: block;
+        width:100%;
+        height: 100vh;
+    }
+
+}

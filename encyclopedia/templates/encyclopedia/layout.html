@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        
+        <title>{% block title %}{% endblock %}</title>
+        
+        <meta name="viewport" content="width=device-width, minimum-scale=1">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <link rel="icon" type="image/icon" href="{% static 'encyclopedia/icon.svg' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'encyclopedia/icofont/icofont.min.css' %}">
+        <link rel="stylesheet" href="{% static 'encyclopedia/styles.css' %}" >
+        <script src="{% static 'encyclopedia/base.js' %}"></script>
+    
+    </head>
+    
+    <body>
+
+        <!-- Navbar for mobile view -->
+        
+        <nav>
+            
+            <a href="javascript:void(0)" id="menu">
+                
+                <i class="icofont-navigation-menu" aria-hidden="true"></i>
+            
+            </a>
+            <a href="javascript:void(0)" id="search" onclick="document.querySelector('form').submit();">
+               
+                <i class="icofont-ui-home"></i>
+            
+            </a>
+            <h2>Wiki</h2>
+        
+        </nav>
+        
+        <div class="row" id="page">
+            
+            <!-- Side Navigation bar -->
+            
+            <div class="sidebar col-lg-2 col-sm-0 col-xs-0">
+                
+                <div class="row" style="margin-left: 10px;">   
+                    
+                    <a href="/" id="icon" >
+                        
+                        <i class="icofont-brand-wikipedia" aria-hidden="true"></i>
+                    
+                    </a>
+                
+                </div>
+                
+                <div >
+                    
+                    <h2>Wiki</h2>
+                    <small>The Free Encyclopedia</small>
+                
+                </div>
+                
+                <hr>
+                
+                <form action="{% url 'encyclopedia:index' %}" method="POST">
+                    
+                    {% csrf_token %}
+                    
+                    <div class="input-group mb-2">
+
+                        {{form.query}}
+                        
+                        <div class="input-group-append">
+                            
+                            <div class="input-group-text">
+                                
+                                <a href="javascript:void(0)" onclick="document.querySelector('form').submit();">
+                                    
+                                    <i class="icofont-search"></i>
+                                
+                                </a>
+                            
+                            </div>
+                        
+                        </div>
+                    </div>
+                </form>
+                
+                <div>
+                    <h6><a href="{% url 'encyclopedia:index' %}">Home</a></h6>
+                </div>
+                
+                <div>
+                    <h6><a href="{% url 'encyclopedia:new_entry' %}">Create New Page</a></h6>
+                </div>
+                
+                <div>
+                    <h6><a href="{% url 'encyclopedia:random_entry' %}">Random Page</a></h6>
+                </div>
+                
+                {% block nav %}
+                {% endblock %}
+            
+            </div>
+            
+            <!-- Main Content of the page -->
+
+            <div class="main col-lg-10 col-xs-12 col-sm-12">
+
+                {% block body %}
+                {% endblock %}
+            
+            </div>
+        
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block body %}
+
+<div style="text-align:center" >
+    
+    <h1>Error {{status}}</h1>
+    <p><strong>Whoops!</strong>{{msg}}</p>    
+    <a href="/" class="btn btn-primary">Return to Homepage</a>
+
+</div>
+
+{% endblock %}

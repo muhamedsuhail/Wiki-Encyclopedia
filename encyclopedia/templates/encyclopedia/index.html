@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}Wiki - Encyclopedia{% endblock %}
+
+{% block body %}
+
+    <h1 style="text-align:left">{{head}}</h1>
+    
+    <hr>
+    
+    <ul id="listing">
+        
+        {% for entry in entries %}
+          
+            <li><a href="wiki/{{entry}}">{{ entry }}</a></li>
+        
+        {% endfor %}
+    
+    </ul>
+
+{% endblock %}
