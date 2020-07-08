@@ -1,6 +1,7 @@
 
 # Local files (virtual env)
 project3/
+.vscode/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
