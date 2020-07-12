@@ -29,7 +29,7 @@
                 <i class="icofont-navigation-menu" aria-hidden="true"></i>
             
             </a>
-            <a href="javascript:void(0)" id="search" onclick="document.querySelector('form').submit();">
+            <a href="{% url 'encyclopedia:index' %}" id="home">
                
                 <i class="icofont-ui-home"></i>
             
@@ -46,7 +46,7 @@
                 
                 <div class="row" style="margin-left: 10px;">   
                     
-                    <a href="/" id="icon" >
+                    <a href="{% url 'encyclopedia:index' %}" id="icon" >
                         
                         <i class="icofont-brand-wikipedia" aria-hidden="true"></i>
                     
