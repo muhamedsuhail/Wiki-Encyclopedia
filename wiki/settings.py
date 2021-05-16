@@ -32,7 +32,7 @@ if DEBUG:
 
 
 
-ALLOWED_HOSTS = ['127.0.0.1','wiki-encyclopedia.herokuapp.com','0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1','wiki-encyclopedia.herokuapp.com','0.0.0.0','wikiencyclopedia.azurewebsites.net'']
 
 
 # Application definition
